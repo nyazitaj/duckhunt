@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href="assets/css/style.css" />
+    <title>DuckHunt</title>
+</head>
+
+<body>
+    <div id="welcome-container" class="welcome-container">
+
+        <div class="game-title">
+            <h1>DuckHunt</h1>
+        </div>
+
+        <div class="container welcome-screen">
+            <div class="row-buttons">
+                <div class="col-buttons">
+                    <button type="button" id="start-game" class="start-game">Commencer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="game-container" class="game-container d-none">
+        <div class="game-title">
+            <h1>DuckHunt</h1>
+        </div>
+
+        <div class="container game-screen">
+            <div id="row-close" class="row-close">
+                <img src="assets/images/close.png" />
+            </div>
+
+            <div class="row-gamearea" id="row-gamearea">
+                <!-- <img src="assets/images/duck3.gif" alt="duck" class="duck" draggable="false"/>
+                <img src="assets/images/duck3.gif" alt="duck" class="duck direction45" draggable="false"/>
+                <img src="assets/images/duck3.gif" alt="duck" class="duck direction-45" draggable="false"/>
+                <img src="assets/images/duck3.gif" alt="duck" class="duck inverse" draggable="false"/>
+                <img src="assets/images/duck3.gif" alt="duck" class="duck inverse-direction45" draggable="false"/>
+                <img src="assets/images/duck3.gif" alt="duck" class="duck inverse-direction-45" draggable="false"/> -->
+            </div>
+        </div>
+
+        <div class="row-buttons">
+            <div class="col-buttons">
+
+                <div id="scores-hunter" class="scores-hunter">Chasseur : <span>0</span></div>
+                <div id="timer" class="timer"><span>0</span></div>
+                <div class="scores-duck" class="scores-duck">Canard : <span>0</span></div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js" defer /></script>
+</body>
+
+</html>

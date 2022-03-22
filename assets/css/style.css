@@ -1,0 +1,233 @@
+/* *{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width: 100%;
+}
+
+h1{
+    text-align: center;
+    margin-top: 50px;
+    padding: 0 0 15px;
+}
+
+table{
+    margin: auto;
+    border-collapse: collapse;
+}
+
+td{
+    border: 1px solid black;
+    text-align: center;
+    height: 70px;
+    width: 70px;
+    background:rgb(12, 167, 102);
+}
+
+.snake-container{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.user-1-pos {
+    background-color: #087090;
+}
+.user-2-pos {
+    background-color: #9e0082;
+}
+.buttons-col {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+div.screen {
+    border: 1px solid silver;
+    min-width: 50px;
+    line-height: 2.3em;
+}
+
+button.active{
+    width: 150px;
+    height: 40px;
+    background:rgb(12, 144, 167);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+button.not-active {
+    width: 150px;
+    height: 40px;
+    background: #e4e4e4;
+    border-radius: 15px;
+}
+div.turn-alert {
+    padding: 30px 0 0;
+} */
+
+
+body {
+    background-color: #e9e9e9;
+}
+.d-none {
+    display: none;
+}
+.game-container {
+    position: relative;
+}
+.container.welcome-screen ,
+.container.game-screen{
+    border: 1px solid silver;
+    max-width: 1000px;
+    min-height: 600px;
+    margin: auto;
+    position: relative;
+    box-shadow: 0 0 15px 0 #ffffff8c;
+}
+.container.welcome-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border: 1px white;
+}
+.container.game-screen {
+    background: #38a8d3;
+    border: 1px white;
+    background-image: url('../images/game-background.png');
+    background-size: cover;
+    cursor: crosshair;
+}
+button.start-game {
+    padding: 15px 44px;
+    border-radius: 10px;
+    margin: auto;
+    background-color: #8e33ce;
+    border: 1px solid #8e33ce;
+    color: white;
+    cursor: pointer;
+    transition: .2s all;
+    box-shadow: 0 0 15px 0px rgb(142 51 206 / 58%);
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+button.start-game:hover {
+    background-color: #672397;
+    border: 1px solid #672397;
+}
+.game-container .row-close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -46px;
+    right: 0px;
+    padding: 8px;
+    border: 1px solid #8e33ce;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .2s all;
+}
+.container .row-close:hover {
+    background-color: #8e33ce;
+}
+.container .row-close img {
+    width: 100%;
+}
+.container .row-close:hover img {
+    width: 100%;
+    filter: invert(1);
+}
+.game-title h1 {
+    text-align: center;
+    padding: 0 0 15px;
+    text-transform: uppercase;
+    font-family: cursive;
+    padding: 0;
+}
+.row-buttons {
+    background-color: white;
+    max-width: 1000px;
+    min-height: 76px;
+    margin: auto;
+    position: relative;
+    box-shadow: 0 0 15px 0 #ffffff8c;
+    padding-top: 15px;
+}
+.game-container .row-buttons {
+    background: #091134;
+}
+.row-buttons .col-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+}
+div.row-gamearea {
+    display: grid;
+    overflow: hidden;
+    position: relative;
+    height: 600px;
+}
+.scores-hunter,
+.timer,
+.scores-duck {
+    padding: 11px;
+    border: 1px solid #7e7e7e;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+    overflow: hidden;
+    box-shadow: inset 0 0 5px 0 #4e7887;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: default;
+    background-color: black;
+}
+@-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+div.timer {
+    min-width: 60px;
+}
+.scores-hunter,
+.scores-duck {
+    min-width: 150px;
+}
+
+img.duck {
+    width: 100px;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    transition: .3s all;
+}
+.direction45 {
+    transform: rotate(45deg);
+}
+.direction-45 {
+    transform: rotate(-45deg);
+}
+.inverse {
+    transform: scaleX(-1);
+}
+.inverse-direction45 {
+    transform: rotate(45deg) scaleX(-1);
+}
+.inverse-direction-45 {
+    transform: rotate(-45deg) scaleX(-1);
+}
+.duck-dead {
+    transform: rotate(15deg);
+    top: 435px !important;
+}
